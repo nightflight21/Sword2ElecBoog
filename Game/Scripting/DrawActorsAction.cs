@@ -9,7 +9,7 @@ namespace Sword.Scripting
     /// <summary>
     /// Draws the actors on the screen.
     /// </summary>
-    public class DrawActorsAction : IAction
+    public class DrawActorsAction : Action
     {
         private VideoService _videoService;
 

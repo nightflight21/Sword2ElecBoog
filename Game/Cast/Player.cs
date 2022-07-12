@@ -55,6 +55,15 @@ namespace Sword.Casting
         }
 
         /// <summary>
+        /// Swings the racket to the right.
+        /// </summary>
+        public void SwingRight()
+        {
+            Point velocity = new Point(Constants.PLAYER_VELOCITY, 0);
+            body.SetVelocity(velocity);
+        }
+
+        /// <summary>
         /// Stops the racket from moving.
         /// </summary>
         public void StopMoving()
