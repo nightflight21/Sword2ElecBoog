@@ -4,12 +4,12 @@ using Sword.Scripting;
 using Sword.Services;
 
 
-namespace Example.Scrolling
+namespace Sword.Scripting
 {
     /// <summary>
     /// Draws the actors on the screen.
     /// </summary>
-    public class DrawActorsAction : Sword.Scripting.Action
+    public class DrawActorsAction : Action
     {
         private VideoService _videoService;
 
@@ -18,7 +18,7 @@ namespace Example.Scrolling
             _videoService = serviceFactory.GetVideoService();
         }
 
-        public override void Execute(Scene scene, float deltaTime, IActionCallback callback)
+        public void Execute(Scene scene, float deltaTime, IActionCallback callback)
         {
             try
             {
