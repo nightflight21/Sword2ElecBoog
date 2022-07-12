@@ -11,6 +11,7 @@ namespace Sword.Directing
     /// </summary>
     public class Director : IActionCallback
     {
+        private Scene scene;
         private Cast cast;
         private Script script;
         private SceneManager sceneManager;
