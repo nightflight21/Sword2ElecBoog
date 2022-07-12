@@ -10,13 +10,13 @@ namespace Sword.Scripting
     /// <summary>
     /// Moves the player within the game world while scrolling the screen.
     /// </summary>
-    public class MovePlayerAction : Sword.Scripting.Action
+    public class MovePlayerAction : IAction
     {
         public MovePlayerAction()
         {
         }
 
-        public override void Execute(Scene scene, float deltaTime, IActionCallback callback)
+        public void Execute(Scene scene, float deltaTime, IActionCallback callback)
         {
             try
             {

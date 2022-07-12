@@ -24,6 +24,14 @@ namespace Sword.Scripting
             {
                 player.SwingRight();
             }
+            else if (keyboardService.IsKeyDown(Constants.UP))
+            {
+                player.SwingUp();
+            }
+            else if (keyboardService.IsKeyDown(Constants.DOWN))
+            {
+                player.SwingDown();
+            }
             else
             {
                 player.StopMoving();

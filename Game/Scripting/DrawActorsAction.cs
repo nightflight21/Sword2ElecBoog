@@ -9,7 +9,7 @@ namespace Sword.Scripting
     /// <summary>
     /// Draws the actors on the screen.
     /// </summary>
-    public class DrawActorsAction : Action
+    public class DrawActorsAction : IAction
     {
         private VideoService _videoService;
 
@@ -18,7 +18,7 @@ namespace Sword.Scripting
             _videoService = serviceFactory.GetVideoService();
         }
 
-        public void Execute(Scene scene, float deltaTime, IActionCallback callback)
+        public void Execute(Scene scene, Script script, IActionCallback callback)
         {
             try
             {
