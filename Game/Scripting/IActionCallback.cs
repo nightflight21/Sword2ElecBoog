@@ -6,7 +6,7 @@ namespace Sword.Scripting
     /// <summary>
     /// A callback that can be used to trigger scene changes.
     /// </summary>
-    public interface ActionCallback
+    public interface IActionCallback
     {
         /// <summary>
         /// Called when we need to transition from one scene to the next.
