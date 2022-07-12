@@ -4,7 +4,7 @@ using Sword.Scripting;
 using Sword.Services;
 
 
-namespace Example.Scrolling
+namespace Sword.Scripting
 {
     /// <summary>
     /// Steers the player left, right, up or down based on keyboard input.

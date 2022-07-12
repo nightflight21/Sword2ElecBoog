@@ -5,7 +5,7 @@ using Sword.Scripting;
 using Sword.Services;
 
 
-namespace Example.Scrolling
+namespace Sword.Scripting
 {
     /// <summary>
     /// Updates the status information at the top of the screen.
