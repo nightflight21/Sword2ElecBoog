@@ -55,11 +55,20 @@ namespace Sword.Casting
         }
 
         /// <summary>
-        /// Swings the racket to the right.
+        /// Swings the racket up.
         /// </summary>
-        public void SwingRight()
+        public void SwingUp()
         {
-            Point velocity = new Point(Constants.PLAYER_VELOCITY, 0);
+            Point velocity = new Point(0, Constants.PLAYER_VELOCITY);
+            body.SetVelocity(velocity);
+        }
+        
+        /// <summary>
+        /// Swings the racket up.
+        /// </summary>
+        public void SwingDown()
+        {
+            Point velocity = new Point(0, -Constants.PLAYER_VELOCITY);
             body.SetVelocity(velocity);
         }
 
