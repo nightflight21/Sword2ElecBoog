@@ -1,9 +1,9 @@
 using System;
-using Unit06.Game.Casting;
-using Unit06.Game.Services;
+using Sword.Casting;
+using Sword.Services;
 
 
-namespace Unit06.Game.Scripting
+namespace Sword.Scripting
 {
     public class TimedChangeSceneAction : Action
     {
