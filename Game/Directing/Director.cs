@@ -9,7 +9,7 @@ namespace Sword.Directing
     /// <summary>
     /// A person who directs the game.
     /// </summary>
-    public class Director : ActionCallback
+    public class Director : IActionCallback
     {
         private Cast cast;
         private Script script;

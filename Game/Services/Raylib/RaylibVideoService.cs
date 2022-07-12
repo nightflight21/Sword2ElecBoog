@@ -36,19 +36,6 @@ namespace Sword.Services
         }
 
         /// </inheritdoc>
-        public void DrawImage(Casting.Image image, Casting.Point position)
-        {
-            string filename = image.GetFilename();
-            if (!textures.ContainsKey(filename))
-            {
-                Raylib_cs.Texture2D loaded = Raylib.LoadTexture(filename);
-                textures[filename] = loaded;
-            }
-            Raylib_cs.Texture2D texture = textures[filename];
-            int x = position.GetX();
-            int y = position.GetY();
-            Raylib.DrawTexture(texture, x, y, Raylib_cs.Color.WHITE);
-        }
 
         /// </inheritdoc>
         public void DrawRectangle(Casting.Point size, Casting.Point position, Casting.Color color,
@@ -71,28 +58,7 @@ namespace Sword.Services
         }
 
         /// </inheritdoc>
-        public void DrawText(Casting.Text text, Casting.Point position)
-        {
-            string value = text.GetValue();
-            int size = text.GetSize();
-            int alignment = text.GetAlignment();
-            Casting.Color color = text.GetColor();
-            int x = position.GetX();
-            int y = position.GetY();
-            
-            string filename = text.GetFontFile();
-            if (!fonts.ContainsKey(filename))
-            {
-                Raylib_cs.Font loaded = Raylib.LoadFont(filename);
-                fonts[filename] = loaded;
-            }
-            Raylib_cs.Font font = fonts[filename];
-
-            x = RecalcuteTextPosition(font, value, size, x, alignment);
-            Raylib_cs.Color raylibColor = ToRaylibColor(color);
-            Vector2 vector = new Vector2(x, y);
-            Raylib.DrawTextEx(font, value, vector, size, 0, raylibColor);
-        }
+       
 
         /// </inheritdoc>
         public void FlushBuffer()
