@@ -13,9 +13,9 @@ namespace Sword.Scripting
             this.keyboardService = keyboardService;
         }
 
-        public void Execute(Cast cast, Script script, IActionCallback callback)
+        public void Execute(Scene scene, Script script, IActionCallback callback)
         {
-            Player player = (Player)cast.GetFirstActor(Constants.PLAYER_GROUP);
+            Player player = (Player)scene.GetFirstActor(Constants.PLAYER_GROUP);
             if (keyboardService.IsKeyDown(Constants.LEFT))
             {
                 player.SwingLeft();

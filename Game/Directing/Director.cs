@@ -57,7 +57,7 @@ namespace Sword.Directing
             List<Sword.Scripting.Action> actions = script.GetActions(group);
             foreach(Sword.Scripting.Action action in actions)
             {
-                action.Execute(cast, script, this);
+                action.Execute(scene, script, this);
             }
         }
     }

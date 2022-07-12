@@ -18,7 +18,7 @@ namespace Sword.Scripting
             _keyboardService = serviceFactory.GetKeyboardService();
         }
 
-        public override void Execute(Scene scene, float deltaTime, IActionCallback callback)
+        public void Execute(Scene scene, Script script, IActionCallback callback)
         {
             try
             {

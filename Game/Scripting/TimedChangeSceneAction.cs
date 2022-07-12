@@ -18,7 +18,7 @@ namespace Sword.Scripting
             this.start = start;
         }
 
-        public void Execute(Cast cast, Script script, IActionCallback callback)
+        public void Execute(Scene scene, Script script, IActionCallback callback)
         {
             DateTime currentTime = DateTime.Now;
             TimeSpan elapsedTime = currentTime.Subtract(start);
