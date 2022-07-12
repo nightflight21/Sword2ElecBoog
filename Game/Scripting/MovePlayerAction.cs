@@ -5,7 +5,7 @@ using Sword.Scripting;
 using Sword.Services;
 
 
-namespace Example.Scrolling
+namespace Sword.Scripting
 {
     /// <summary>
     /// Moves the player within the game world while scrolling the screen.

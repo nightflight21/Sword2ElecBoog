@@ -13,20 +13,20 @@ namespace Sword.Scripting
             this.keyboardService = keyboardService;
         }
 
-        public void Execute(Cast cast, Script script, ActionCallback callback)
+        public void Execute(Cast cast, Script script, IActionCallback callback)
         {
-            Racket racket = (Racket)cast.GetFirstActor(Constants.RACKET_GROUP);
+            Player player = (Player)cast.GetFirstActor(Constants.PLAYER_GROUP);
             if (keyboardService.IsKeyDown(Constants.LEFT))
             {
-                racket.SwingLeft();
+                player.SwingLeft();
             }
             else if (keyboardService.IsKeyDown(Constants.RIGHT))
             {
-                racket.SwingRight();
+                player.SwingRight();
             }
             else
             {
-                racket.StopMoving();
+                player.StopMoving();
             }
         }
     }
