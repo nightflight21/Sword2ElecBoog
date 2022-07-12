@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "2aFUZDDJv8QSEje6nxX3Arh6c6tUKS14BwzWF1qpaNID47W/hGS24qQYPUiczsBpKpBFaTrUDjKunCgi8yBlyg==",
+  "dgSpecHash": "gddF4npIpSlYrSMDifoGJkJu5KQTV+YxNLeOaw8fW7UhG024Qfqp8z4zIlPVE1K1fhmtUmV6ArV2i3UNEAf61A==",
   "success": true,
   "projectFilePath": "C:\\Users\\brand\\OneDrive\\Documents\\C# code\\Sword2ElecBoog\\Sword2ElecBoog.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\brand\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
+    "C:\\Users\\brand\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

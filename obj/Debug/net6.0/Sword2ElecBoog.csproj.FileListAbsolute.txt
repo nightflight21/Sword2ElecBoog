@@ -1,0 +1,5 @@
+C:\Users\brand\OneDrive\Documents\C# code\Sword2ElecBoog\obj\Debug\net6.0\Sword2ElecBoog.csproj.AssemblyReference.cache
+C:\Users\brand\OneDrive\Documents\C# code\Sword2ElecBoog\obj\Debug\net6.0\Sword2ElecBoog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brand\OneDrive\Documents\C# code\Sword2ElecBoog\obj\Debug\net6.0\Sword2ElecBoog.AssemblyInfoInputs.cache
+C:\Users\brand\OneDrive\Documents\C# code\Sword2ElecBoog\obj\Debug\net6.0\Sword2ElecBoog.AssemblyInfo.cs
+C:\Users\brand\OneDrive\Documents\C# code\Sword2ElecBoog\obj\Debug\net6.0\Sword2ElecBoog.csproj.CoreCompileInputs.cache
