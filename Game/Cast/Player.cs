@@ -45,51 +45,6 @@ namespace Sword.Casting
             body.SetPosition(newPosition);
         }
 
-        /// <summary>
-        /// Swings the racket to the left.
-        /// </summary>
-        public void SwingLeft()
-        {
-            Point velocity = new Point(-Constants.PLAYER_VELOCITY, 0);
-            body.SetVelocity(velocity);
-        }
-
-        /// <summary>
-        /// Swings the racket to the right.
-        /// </summary>
-        public void SwingRight()
-        {
-            Point velocity = new Point(Constants.PLAYER_VELOCITY, 0);
-            body.SetVelocity(velocity);
-        }
-
-        /// <summary>
-        /// Swings the racket up.
-        /// </summary>
-        public void SwingUp()
-        {
-            Point velocity = new Point(0, Constants.PLAYER_VELOCITY);
-            body.SetVelocity(velocity);
-        }
-        
-        /// <summary>
-        /// Swings the racket up.
-        /// </summary>
-        public void SwingDown()
-        {
-            Point velocity = new Point(0, -Constants.PLAYER_VELOCITY);
-            body.SetVelocity(velocity);
-        }
-
-        /// <summary>
-        /// Stops the racket from moving.
-        /// </summary>
-        public void StopMoving()
-        {
-            Point velocity = new Point(0, 0);
-            body.SetVelocity(velocity);
-        }
-
         public virtual void Steer(Vector2 vector)
         {
             _velocity = vector;

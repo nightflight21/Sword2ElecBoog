@@ -1,25 +1,25 @@
 using System;
-using Sword.Casting;
-using Sword.Scripting;
-using Sword.Services;
+using Byui.Games.Casting;
+using Byui.Games.Scripting;
+using Byui.Games.Services;
 
 
-namespace Sword.Scripting
+namespace Example.Scrolling
 {
     /// <summary>
     /// Steers the player left, right, up or down based on keyboard input.
     /// </summary>
-    public class SteerPlayerAction : Action
+    public class SteerPlayerAction : Byui.Games.Scripting.Action
     {
-        private KeyboardService keyboardService;
+        private IKeyboardService _keyboardService;
         
-        public SteerPlayerAction(KeyboardService keyboardService)
+        public SteerPlayerAction(IServiceFactory serviceFactory)
         {
-            this.keyboardService = keyboardService;
+            _keyboardService = serviceFactory.GetKeyboardService();
         }
 
-        public void Execute(Scene scene, Script script, IActionCallback callback)
-        { 
+        public override void Execute(Scene scene, float deltaTime, IActionCallback callback)
+        {
             try
             {
                 // declare basic speed and direction variables
@@ -28,21 +28,21 @@ namespace Sword.Scripting
                 int directionY = 0;
 
                 // detect vertical or y-axis direction
-                if (keyboardService.IsKeyDown(Constants.UP))
+                if (_keyboardService.IsKeyDown(KeyboardKey.W))
                 {
                     directionY = -playerSpeed;
                 }
-                else if (keyboardService.IsKeyDown(Constants.DOWN))
+                else if (_keyboardService.IsKeyDown(KeyboardKey.S))
                 {
                     directionY = playerSpeed;
                 }
 
                 // detect horizontal or x-axis direction
-                if (keyboardService.IsKeyDown(Constants.LEFT))
+                if (_keyboardService.IsKeyDown(KeyboardKey.A))
                 {
                     directionX = -playerSpeed;
                 }
-                else if (keyboardService.IsKeyDown(Constants.RIGHT))
+                else if (_keyboardService.IsKeyDown(KeyboardKey.D))
                 {
                     directionX = playerSpeed;
                 }
@@ -50,6 +50,10 @@ namespace Sword.Scripting
                 // steer the player in the desired direction
                 Actor player = scene.GetFirstActor("player");
                 player.Steer(directionX, directionY);
+
+                    //steers enemy away lol (prototype)
+                //Actor enemy = scene.GetFirstActor("enemy");
+                //enemy.Steer(-directionX, -directionY);
             }
             catch (Exception exception)
             {
