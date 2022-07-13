@@ -3,7 +3,7 @@ using Sword.Casting;
 
 namespace Sword.Services
 {
-    public interface VideoService
+    public interface IVideoService
     {
 
         /// <summary>

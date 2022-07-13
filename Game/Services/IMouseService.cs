@@ -3,7 +3,7 @@ using Sword.Casting;
 
 namespace Sword.Services
 {
-    public interface MouseService
+    public interface IMouseService
     {
         /// <summary>
         /// Gets the current mouse cursor coordinates.

@@ -3,7 +3,7 @@ using Sword.Casting;
 
 namespace Sword.Services
 {
-    public interface PhysicsService
+    public interface IPhysicsService
     {
         /// <summary>
         /// Whether or not two bodies have collided.

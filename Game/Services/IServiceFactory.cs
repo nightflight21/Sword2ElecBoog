@@ -5,9 +5,10 @@ namespace Sword.Services
     public interface IServiceFactory
     {
         //IAudioService GetAudioService();
-        KeyboardService GetKeyboardService();
-        MouseService GetMouseService();
+        IKeyboardService GetKeyboardService();
+        IMouseService GetMouseService();
         //ISettingsService GetSettingsService();
-        VideoService GetVideoService();
+        IVideoService GetVideoService();
+        IPhysicsService GetPhysicsService();
     }
 }
