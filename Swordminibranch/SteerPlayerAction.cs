@@ -51,9 +51,9 @@ namespace Example.Scrolling
                 Actor player = scene.GetFirstActor("player");
                 player.Steer(directionX, directionY);
 
-                //steers enemy away lol
-                Actor enemy = scene.GetFirstActor("enemy");
-                enemy.Steer(-directionX, -directionY);
+                    //steers enemy away lol (prototype)
+                //Actor enemy = scene.GetFirstActor("enemy");
+                //enemy.Steer(-directionX, -directionY);
             }
             catch (Exception exception)
             {

@@ -36,8 +36,10 @@ namespace Example.Scrolling
 
             Actor enemy = new Actor();
             enemy.SizeTo(25, 25);
-            enemy.MoveTo(600,400);
+            //enemy.MoveTo(600, 400);   //taken care of in moveplayeraction
             enemy.Tint(Color.Blue());
+            
+
 
             Actor screen = new Actor();
             screen.SizeTo(640, 480);
