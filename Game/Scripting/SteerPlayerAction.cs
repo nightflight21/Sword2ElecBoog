@@ -9,17 +9,17 @@ namespace Sword.Scripting
     /// <summary>
     /// Steers the player left, right, up or down based on keyboard input.
     /// </summary>
-    public class SteerPlayerAction : Sword.Scripting.Action
+    public class SteerPlayerAction : Action
     {
-        private IKeyboardService _keyboardService;
+        private KeyboardService keyboardService;
         
-        public SteerPlayerAction(IServiceFactory serviceFactory)
+        public SteerPlayerAction(KeyboardService keyboardService)
         {
-            _keyboardService = serviceFactory.GetKeyboardService();
+            this.keyboardService = keyboardService;
         }
 
         public void Execute(Scene scene, Script script, IActionCallback callback)
-        {
+        { 
             try
             {
                 // declare basic speed and direction variables
@@ -28,21 +28,21 @@ namespace Sword.Scripting
                 int directionY = 0;
 
                 // detect vertical or y-axis direction
-                if (_keyboardService.IsKeyDown(KeyboardKey.W))
+                if (keyboardService.IsKeyDown(Constants.UP))
                 {
                     directionY = -playerSpeed;
                 }
-                else if (_keyboardService.IsKeyDown(KeyboardKey.S))
+                else if (keyboardService.IsKeyDown(Constants.DOWN))
                 {
                     directionY = playerSpeed;
                 }
 
                 // detect horizontal or x-axis direction
-                if (_keyboardService.IsKeyDown(KeyboardKey.A))
+                if (keyboardService.IsKeyDown(Constants.LEFT))
                 {
                     directionX = -playerSpeed;
                 }
-                else if (_keyboardService.IsKeyDown(KeyboardKey.D))
+                else if (keyboardService.IsKeyDown(Constants.RIGHT))
                 {
                     directionX = playerSpeed;
                 }
