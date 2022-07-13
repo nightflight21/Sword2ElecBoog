@@ -4,7 +4,7 @@ using Raylib_cs;
 
 namespace Sword.Services
 {
-    public class RaylibKeyboardService : KeyboardService
+    public class RaylibKeyboardService : IKeyboardService
     {
         private Dictionary<string, Raylib_cs.KeyboardKey> keys 
                 = new Dictionary<string, Raylib_cs.KeyboardKey>() {
