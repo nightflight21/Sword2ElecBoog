@@ -147,7 +147,7 @@ namespace Sword.Directing
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
-            Enemy enemy = new Enemy(body, false);
+            Enemy enemy = new Enemy(body);
         
             cast.AddActor(Constants.ENEMY_GROUP, enemy);
         }
@@ -160,8 +160,8 @@ namespace Sword.Directing
                 Constants.ALIGN_CENTER, Constants.WHITE);
             Point position = new Point(Constants.CENTER_X, Constants.CENTER_Y);
 
-            Label label = new Label(text, position);
-            cast.AddActor(Constants.DIALOG_GROUP, label);   
+            //Label label = new Label(text, position);
+            //cast.AddActor(Constants.DIALOG_GROUP, label);   
         }
 
         private void AddPlayer(Cast cast)
@@ -189,15 +189,15 @@ namespace Sword.Directing
                 Constants.ALIGN_CENTER, Constants.WHITE);
             Point position = new Point(Constants.CENTER_X, Constants.HUD_MARGIN);
             
-            Label label = new Label(text, position);
-            cast.AddActor(Constants.SCORE_GROUP, label);   
+            //Label label = new Label(text, position);
+            //cast.AddActor(Constants.SCORE_GROUP, label);   
         }
 
         private void AddStats(Cast cast)
         {
             cast.ClearActors(Constants.STATS_GROUP);
-            Stats stats = new Stats();
-            cast.AddActor(Constants.STATS_GROUP, stats);
+            //Stats stats = new Stats();
+            //cast.AddActor(Constants.STATS_GROUP, stats);
         }
 
         private List<List<string>> LoadLevel(string filename)
@@ -232,10 +232,10 @@ namespace Sword.Directing
 
         private void AddOutputActions(Script script)
         {
-            script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
+            //script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             //script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawEnemyAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawPlayerAction(VideoService));
+            //script.AddAction(Constants.OUTPUT, new DrawEnemyAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawActorsAction(VideoService));
             //script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
             //script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
         }
