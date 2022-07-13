@@ -176,7 +176,7 @@ namespace Sword.Directing
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
-            Player player = new Player(body, false);
+            Player player = new Player(body);
         
             cast.AddActor(Constants.PLAYER_GROUP, player);
         }
@@ -233,11 +233,11 @@ namespace Sword.Directing
         private void AddOutputActions(Script script)
         {
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawBallAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawRacketAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
+            //script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawEnemyAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawPlayerAction(VideoService));
+            //script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
+            //script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
         }
 
         private void AddUnloadActions(Script script)
