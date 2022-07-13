@@ -13,5 +13,12 @@ namespace Sword.Scripting
         /// </summary>
         /// <param name="sceneName">The next scene.</param>
         void OnNext(string sceneName);
+        
+        /// <summary>
+        /// Invoked when an Action needs to signal the game should be stopped.
+        /// </summary>
+        void OnInfo(string message);
+        void OnStop();
+        void OnError(string message, Exception exception);
     }
 }

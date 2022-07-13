@@ -11,9 +11,9 @@ namespace Sword.Scripting
     /// </summary>
     public class SteerPlayerAction : Action
     {
-        private KeyboardService keyboardService;
+        private IKeyboardService keyboardService;
         
-        public SteerPlayerAction(KeyboardService keyboardService)
+        public SteerPlayerAction(IKeyboardService keyboardService)
         {
             this.keyboardService = keyboardService;
         }

@@ -11,10 +11,10 @@ namespace Sword.Directing
     public class SceneManager
     {
         //public static AudioService AudioService = new RaylibAudioService();
-        public static KeyboardService KeyboardService = new RaylibKeyboardService();
-        public static MouseService MouseService = new RaylibMouseService();
-        public static PhysicsService PhysicsService = new RaylibPhysicsService();
-        public static VideoService VideoService = new RaylibVideoService(Constants.GAME_NAME,
+        public static IKeyboardService KeyboardService = new RaylibKeyboardService();
+        public static IMouseService MouseService = new RaylibMouseService();
+        public static IPhysicsService PhysicsService = new RaylibPhysicsService();
+        public static IVideoService VideoService = new RaylibVideoService(Constants.GAME_NAME,
             Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.BLACK);
 
         public SceneManager()
@@ -27,10 +27,6 @@ namespace Sword.Directing
             {
                 PrepareNewGame(cast, script);
             }
-            // else if (scene == Constants.NEXT_LEVEL)
-            // {
-            //     PrepareNextLevel(cast, script);
-            // }
             else if (scene == Constants.TRY_AGAIN)
             {
                 PrepareTryAgain(cast, script);
@@ -57,31 +53,10 @@ namespace Sword.Directing
             AddInitActions(script);
             AddLoadActions(script);
 
-            //ChangeSceneAction a = new ChangeSceneAction(KeyboardService);//, Constants.NEXT_LEVEL);
-            //script.AddAction(Constants.INPUT, a);
-
             AddOutputActions(script);
             AddUnloadActions(script);
             AddReleaseActions(script);
         }
-
-        // private void PrepareNextLevel(Cast cast, Script script)
-        // {
-        //     AddBall(cast);
-        //     AddBricks(cast);
-        //     AddRacket(cast);
-        //     AddDialog(cast, Constants.PREP_TO_LAUNCH);
-
-        //     script.ClearAllActions();
-
-        //     TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.IN_PLAY, 2, DateTime.Now);
-        //     script.AddAction(Constants.INPUT, ta);
-
-        //     AddOutputActions(script);
-
-        //     PlaySoundAction sa = new PlaySoundAction(AudioService, Constants.WELCOME_SOUND);
-        //     script.AddAction(Constants.OUTPUT, sa);
-        // }
         private void PlaceEnemies(Cast cast, Script script)
         {
 
@@ -109,7 +84,7 @@ namespace Sword.Directing
 
             script.ClearAllActions();
 
-            ControlPlayerAction action = new ControlPlayerAction(KeyboardService);
+            SteerPlayerAction action = new SteerPlayerAction(KeyboardService);
             script.AddAction(Constants.INPUT, action);
 
             AddUpdateActions(script);    
