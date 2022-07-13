@@ -39,10 +39,10 @@ namespace Sword.Casting
             body.SetPosition(newPosition);
         }
 
-        public virtual void Steer(Vector2 vector)
-        {
-            //_velocity = vector;
-        }
+        // public virtual void Steer(Vector2 vector)
+        // {
+        //     //_velocity = vector;
+        // }
         
     }
 }
