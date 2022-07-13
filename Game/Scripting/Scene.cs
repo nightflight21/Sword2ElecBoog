@@ -17,14 +17,14 @@ namespace Sword.Scripting
         
         public Scene() { }
 
-        public void AddAction(int phase, Action action)
+        public void AddAction(string phase, Action action)//(int phase, Action action)
         {
-            _script.Add(phase, action);
+            _script.AddAction(phase, action);
         }
 
         public void AddActor(string group, Actor actor)
         {
-            _cast.Add(group, actor);
+            _cast.AddActor(group, actor);
         }
 
         public void ApplyChanges()

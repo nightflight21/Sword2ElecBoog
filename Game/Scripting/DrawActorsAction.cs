@@ -1,44 +1,43 @@
 using System;
 using Sword.Casting;
-using Sword.Scripting;
 using Sword.Services;
 
 
-namespace Example.Scrolling
+namespace Sword.Scripting
 {
     /// <summary>
     /// Draws the actors on the screen.
     /// </summary>
-    public class DrawActorsAction : Byui.Games.Scripting.Action
+    public class DrawActorsAction : Action
     {
-        private IVideoService _videoService;
+        private IVideoService videoService;
 
-        public DrawActorsAction(IServiceFactory serviceFactory)
+        public DrawActorsAction(IVideoService videoService)
         {
             this.videoService = videoService;
         }
 
-        public override void Execute(Scene scene, float deltaTime, IActionCallback callback)
+        public void Execute(Scene scene, Script script, IActionCallback callback)
         {
             try
             {
                 // Get the actors from the cast.
                 Camera camera = scene.GetFirstActor<Camera>("camera");
-                Label instructions = scene.GetFirstActor<Label>("instructions");
+                //Label instructions = scene.GetFirstActor<Label>("instructions");
                 Actor player = scene.GetFirstActor("player");
-                Label status = scene.GetFirstActor<Label>("status");
+                //Label status = scene.GetFirstActor<Label>("status");
                 Actor enemy = scene.GetFirstActor("enemy");
 
                 // Draw the actors on the screen. Note we have provided the camera as a second 
                 // parameter when drawing the player. The videoservice uses the camera to translate
                 // the player's position within the world to its position on the screen.
-                _videoService.ClearBuffer();
-                _videoService.DrawGrid(160, Color.Gray(), camera);
-                _videoService.Draw(instructions);
-                _videoService.Draw(player, camera);
-                _videoService.Draw(enemy);
-                _videoService.Draw(status);
-                _videoService.FlushBuffer();
+                videoService.ClearBuffer();
+                videoService.DrawGrid(160, Color.Gray(), camera);
+                //videoService.Draw(instructions);
+                videoService.Draw(player, camera);
+                videoService.Draw(enemy);
+                //videoService.Draw(status);
+                videoService.FlushBuffer();
             }
             catch (Exception exception)
             {
