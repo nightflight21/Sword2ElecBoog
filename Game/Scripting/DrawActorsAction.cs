@@ -1,7 +1,7 @@
 using System;
-using Byui.Games.Casting;
-using Byui.Games.Scripting;
-using Byui.Games.Services;
+using Sword.Casting;
+using Sword.Scripting;
+using Sword.Services;
 
 
 namespace Example.Scrolling
