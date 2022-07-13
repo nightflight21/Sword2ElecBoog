@@ -1,14 +1,16 @@
+using System;
+
 namespace Sword.Casting
 {
     /// <summary>
-    /// A color.
+    /// A color. 
     /// </summary>
     public class Color
     {
-        private int _red;
-        private int _green;
-        private int _blue;
-        private int _alpha;
+        private byte _red = 0;
+        private byte _green = 0;
+        private byte _blue = 0;
+        private byte _alpha = 0;
 
         /// <summary>
         /// Constructs a new instance of Color.
@@ -66,7 +68,10 @@ namespace Sword.Casting
         {
             return _red;
         }
-
+        public Tuple<byte, byte, byte, byte> ToTuple()
+        {
+            return Tuple.Create(_red, _green, _blue, _alpha);
+        }
         
     }
 }

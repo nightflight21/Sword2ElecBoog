@@ -14,7 +14,7 @@ namespace Sword.Casting
         private float _rotation = 0f;
         private float _scale = 1f;
         private Vector2 _size = Vector2.Zero;
-        //private Color _tint = Color.White();
+        private Color _tint = Color.White();
         private Vector2 _velocity = Vector2.Zero;
         
         public Actor() { }
@@ -266,6 +266,10 @@ namespace Sword.Casting
                 Vector2 newPosition = new Vector2(x, y);
                 MoveTo(newPosition);
             }
+        }
+        public virtual Color GetTint()
+        {
+            return _tint;
         }
     }
 }

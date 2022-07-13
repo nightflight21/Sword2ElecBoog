@@ -8,7 +8,7 @@ using Sword.Casting;
 
 namespace Sword.Services
 {
-    public class RaylibVideoService : IVideoService
+    public class RaylibVideoService : IVideoService 
     {
         private Casting.Color color;
         private int height;
@@ -167,14 +167,15 @@ namespace Sword.Services
 
         public void Draw(Actor actor)
         {
+            Raylib_cs.Color color = GetRaylibColor(actor.GetTint());
             Vector2 position = actor.GetCenter();
             Vector2 size = actor.GetSize();
             float rotation = actor.GetRotation();
             
-            Sword.Casting.Rectangle destination = new Rectangle(position.X, position.Y, size.X, size.Y);
+            Raylib_cs.Rectangle destination = new Raylib_cs.Rectangle(position.X, position.Y, size.X, size.Y);
             Vector2 origin = new Vector2(size.X / 2, size.Y / 2);
             
-            Raylib.DrawRectanglePro(destination, origin, rotation);
+            Raylib.DrawRectanglePro(destination, origin, rotation, color);
         }
 
         public void Draw(Actor actor, Camera camera)
@@ -184,14 +185,15 @@ namespace Sword.Services
 
             if (actor == focus || actor.Overlaps(screen))
             {
+                Raylib_cs.Color color = GetRaylibColor(actor.GetTint());
                 Vector2 position = actor.GetCenter() - camera.GetPosition();
                 Vector2 size = actor.GetSize();
                 float rotation = actor.GetRotation();
 
-                Rectangle destination = new Rectangle(position.X, position.Y, size.X, size.Y);
+                Raylib_cs.Rectangle destination = new Raylib_cs.Rectangle(position.X, position.Y, size.X, size.Y);
                 Vector2 origin = new Vector2(size.X / 2, size.Y / 2);
 
-                Raylib.DrawRectanglePro(destination, origin, rotation);
+                Raylib.DrawRectanglePro(destination, origin, rotation, color);
             }
         }
 
@@ -202,8 +204,8 @@ namespace Sword.Services
             Vector2 size = image.GetSize();
             
             Texture2D texture = GetRaylibTexture(image.GetFile());
-            Rectangle source = new Rectangle(0, 0, originalSize.X, originalSize.Y);
-            Rectangle destination = new Rectangle(position.X, position.Y, size.X, size.Y);
+            Raylib_cs.Rectangle source = new Raylib_cs.Rectangle(0, 0, originalSize.X, originalSize.Y);
+            Raylib_cs.Rectangle destination = new Raylib_cs.Rectangle(position.X, position.Y, size.X, size.Y);
             Vector2 origin = new Vector2(size.X / 2, size.Y / 2);
             float rotation = image.GetRotation();
             Raylib_cs.Color tint = GetRaylibColor(image.GetTint());
@@ -223,8 +225,8 @@ namespace Sword.Services
                 Vector2 size = image.GetSize();
                 
                 Texture2D texture = GetRaylibTexture(image.GetFile());
-                Rectangle source = new Rectangle(0, 0, originalSize.X, originalSize.Y);
-                Rectangle destination = new Rectangle(position.X, position.Y, size.X, size.Y);
+                Raylib_cs.Rectangle source = new Raylib_cs.Rectangle(0, 0, originalSize.X, originalSize.Y);
+                Raylib_cs.Rectangle destination = new Raylib_cs.Rectangle(position.X, position.Y, size.X, size.Y);
                 Vector2 origin = new Vector2(size.X / 2, size.Y / 2);
                 float rotation = image.GetRotation();
                 Raylib_cs.Color tint = GetRaylibColor(image.GetTint());
@@ -325,8 +327,8 @@ namespace Sword.Services
         public void DrawGrid(int cellSize, Casting.Color color)
         {
             Raylib_cs.Color raylibColor = GetRaylibColor(color);
-            int width = _settings.GetInt("screenWidth");
-            int height = _settings.GetInt("screenHeight");
+            int width = Constants.SCREEN_WIDTH;
+            int height = Constants.SCREEN_HEIGHT;
             
             for (int x = 0; x < width; x += cellSize)
             {
@@ -357,11 +359,6 @@ namespace Sword.Services
             }
         }
 
-        public void FlushBuffer()
-        {
-            Raylib.EndDrawing(); 
-        }
-
         public int GetFps()
         {
             return Raylib.GetFPS();
@@ -372,38 +369,9 @@ namespace Sword.Services
             return Raylib.GetFrameTime();
         }
 
-        public void Initialize()
-        {
-            if (!Raylib.IsWindowReady())
-            {
-                string caption = _settings.GetString("screenCaption");
-                int width = _settings.GetInt("screenWidth");
-                int height = _settings.GetInt("screenHeight");
-                int frameRate = _settings.GetInt("frameRate");
-                
-                Raylib.InitWindow(width, height, caption);
-                Raylib.SetTargetFPS(frameRate);
-            }
-        }
-
         public bool IsReady()
         {
             return Raylib.IsWindowReady();
-        }
-
-        public bool IsWindowOpen()
-        {
-            return !Raylib.WindowShouldClose();
-        }
-
-        public void Release()
-        {
-            if (!Raylib.WindowShouldClose())
-            {
-                UnloadFonts();
-                UnloadImages();
-                Raylib.CloseWindow();
-            }
         }
 
         public void SetBackground(Casting.Color color)
@@ -438,25 +406,5 @@ namespace Sword.Services
             }
             return _textures[filepath];
         }
-
-        private void UnloadFonts()
-        {
-            foreach (string key in _fonts.Keys)
-            {
-                Raylib_cs.Font font = _fonts[key];
-                Raylib.UnloadFont(font);
-            }
-        }
-
-        private void UnloadImages()
-        {
-            foreach (string key in _textures.Keys)
-            {
-                Raylib_cs.Texture2D texture = _textures[key];
-                Raylib.UnloadTexture(texture);
-            }
-        }
-
-
     }
 }
