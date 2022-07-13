@@ -5,7 +5,7 @@ using Sword.Casting;
 
 namespace Sword.Services
 {
-    public class RaylibPhysicsService : PhysicsService
+    public class RaylibPhysicsService : IPhysicsService
     {
         /// </inheritdoc>
         public bool HasCollided(Body subject, Body agent)

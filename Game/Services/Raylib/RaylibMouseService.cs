@@ -5,7 +5,7 @@ using Sword.Casting;
 
 namespace Sword.Services
 {
-    public class RaylibMouseService : MouseService
+    public class RaylibMouseService : IMouseService
     {
         private Dictionary<string, Raylib_cs.MouseButton> buttons
                 = new Dictionary<string, Raylib_cs.MouseButton>() {

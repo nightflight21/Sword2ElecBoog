@@ -7,7 +7,7 @@ using Raylib_cs;
 
 namespace Sword.Services
 {
-    public class RaylibVideoService : VideoService
+    public class RaylibVideoService : IVideoService
     {
         private Casting.Color color;
         private int height;
