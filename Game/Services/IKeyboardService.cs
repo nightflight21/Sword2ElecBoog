@@ -1,6 +1,6 @@
 namespace Sword.Services
 {
-    public interface KeyboardService
+    public interface IKeyboardService
     {
         /// <summary>
         /// Whether or not the given key is down.

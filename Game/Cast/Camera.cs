@@ -27,7 +27,7 @@ namespace Sword.Casting
             _world = world;
         }
 
-        public Vector2 GetPosition()
+        public override Vector2 GetPosition()
         {
             Vector2 minOffset = new Vector2(0, 0);
             Vector2 maxOffset = _world.GetSize() - _screen.GetSize();
