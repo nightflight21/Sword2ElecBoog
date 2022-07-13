@@ -32,7 +32,7 @@ namespace Byui.Games.Casting
             }
         }
 
-        public void ApplyChanges()
+        public void ApplyChanges() 
         {
             foreach (string group in _removed.Keys)
             {
