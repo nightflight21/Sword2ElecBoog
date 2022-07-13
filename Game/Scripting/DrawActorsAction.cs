@@ -11,15 +11,9 @@ namespace Example.Scrolling
     /// </summary>
     public class DrawActorsAction : Byui.Games.Scripting.Action
     {
-<<<<<<< HEAD
         private IVideoService _videoService;
 
         public DrawActorsAction(IServiceFactory serviceFactory)
-=======
-        private VideoService videoService;
-
-        public DrawActorsAction(VideoService videoservice)
->>>>>>> 7d947431779a4743cbd13c0bc341ee880289709b
         {
             this.videoService = videoService;
         }
@@ -38,7 +32,6 @@ namespace Example.Scrolling
                 // Draw the actors on the screen. Note we have provided the camera as a second 
                 // parameter when drawing the player. The videoservice uses the camera to translate
                 // the player's position within the world to its position on the screen.
-<<<<<<< HEAD
                 _videoService.ClearBuffer();
                 _videoService.DrawGrid(160, Color.Gray(), camera);
                 _videoService.Draw(instructions);
@@ -46,14 +39,6 @@ namespace Example.Scrolling
                 _videoService.Draw(enemy);
                 _videoService.Draw(status);
                 _videoService.FlushBuffer();
-=======
-                videoService.ClearBuffer();
-                videoService.DrawGrid(160, Color.Gray(), camera);
-                videoService.Draw(instructions);
-                videoService.Draw(player, camera);
-                videoService.Draw(status);
-                videoService.FlushBuffer();
->>>>>>> 7d947431779a4743cbd13c0bc341ee880289709b
             }
             catch (Exception exception)
             {
