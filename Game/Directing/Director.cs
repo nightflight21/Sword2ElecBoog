@@ -11,6 +11,8 @@ namespace Sword.Directing
     /// </summary>
     public class Director : IActionCallback
     {
+        //private IAudioService _audioService = null;
+        private IVideoService _videoService = null;
         private Scene scene;
         private Cast cast;
         private Script script;
@@ -60,6 +62,25 @@ namespace Sword.Directing
             {
                 action.Execute(scene, script, this);
             }
+        }
+        public void OnError(string message, System.Exception exception)
+        {
+            //_audioService.Release();
+            _videoService.Release();
+            System.Console.Error.WriteLine($"ERROR: {message}");
+            System.Console.Error.WriteLine(exception.Message);
+            System.Console.Error.WriteLine(exception.StackTrace);
+        }
+
+        public void OnInfo(string message)
+        {
+            System.Console.Out.WriteLine($"INFO: {message}");
+        }
+
+        public void OnStop()
+        {
+            //_audioService.Release();
+            _videoService.Release();
         }
     }
 }

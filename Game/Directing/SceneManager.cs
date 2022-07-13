@@ -196,13 +196,13 @@ namespace Sword.Directing
 
         private void AddInitActions(Script script)
         {
-            script.AddAction(Constants.INITIALIZE, new InitializeDevicesAction( 
-                VideoService));
+            // script.AddAction(Constants.INITIALIZE, new InitializeDevicesAction( 
+            //     VideoService));
         }
 
         private void AddLoadActions(Script script)
         {
-            script.AddAction(Constants.LOAD, new LoadAssetsAction( VideoService));
+            //script.AddAction(Constants.LOAD, new LoadAssetsAction( VideoService));
         }
 
         private void AddOutputActions(Script script)
@@ -217,21 +217,21 @@ namespace Sword.Directing
 
         private void AddUnloadActions(Script script)
         {
-            script.AddAction(Constants.UNLOAD, new UnloadAssetsAction(VideoService));
+            //script.AddAction(Constants.UNLOAD, new UnloadAssetsAction(VideoService));
         }
 
         private void AddReleaseActions(Script script)
         {
-            script.AddAction(Constants.RELEASE, new ReleaseDevicesAction( 
-                VideoService));
+            // script.AddAction(Constants.RELEASE, new ReleaseDevicesAction( 
+            //     VideoService));
         }
 
         private void AddUpdateActions(Script script)
         {
-            script.AddAction(Constants.UPDATE, new MoveBallAction());
-            script.AddAction(Constants.UPDATE, new MoveRacketAction());
-            script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService));
-            script.AddAction(Constants.UPDATE, new CollideRacketAction(PhysicsService));
+            script.AddAction(Constants.UPDATE, new MoveEnemyAction());
+            script.AddAction(Constants.UPDATE, new MovePlayerAction());
+            //script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService));
+            //script.AddAction(Constants.UPDATE, new CollideRacketAction(PhysicsService));
             //script.AddAction(Constants.UPDATE, new CheckOverAction());     
         }
     }
