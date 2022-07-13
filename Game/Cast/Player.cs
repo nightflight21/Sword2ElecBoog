@@ -1,3 +1,6 @@
+using System;
+using System.Numerics;
+
 namespace Sword.Casting
 {
     /// <summary>
@@ -6,6 +9,12 @@ namespace Sword.Casting
     public class Player : Actor
     {
         private Body body;
+        private Vector2 _position = Vector2.Zero;
+        private float _rotation = 0f;
+        private float _scale = 1f;
+        private Vector2 _size = Vector2.Zero;
+        //private Color _tint = Color.White();
+        private Vector2 _velocity = Vector2.Zero;
         
         /// <summary>
         /// Constructs a new instance of Actor.
@@ -79,6 +88,11 @@ namespace Sword.Casting
         {
             Point velocity = new Point(0, 0);
             body.SetVelocity(velocity);
+        }
+
+        public virtual void Steer(Vector2 vector)
+        {
+            _velocity = vector;
         }
         
     }
