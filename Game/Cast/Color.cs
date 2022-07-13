@@ -5,20 +5,30 @@ namespace Sword.Casting
     /// </summary>
     public class Color
     {
-        private int red;
-        private int green;
-        private int blue;
-        private int alpha;
+        private int _red;
+        private int _green;
+        private int _blue;
+        private int _alpha;
 
         /// <summary>
         /// Constructs a new instance of Color.
         /// </summary>
-        public Color(int red, int green, int blue, int alpha = 255)
+        public static Color Black() { return new Color(0, 0, 0); }
+        public static Color Red() { return new Color(255, 0, 0); }
+        public static Color Orange() { return new Color(255, 128, 0); }
+        public static Color Yellow() { return new Color(255, 255, 0); }
+        public static Color Green() { return new Color(0, 255, 0); }
+        public static Color Blue() { return new Color(0, 128, 255); }
+        public static Color Purple() { return new Color(127, 0, 255); }
+        public static Color White() { return new Color(255, 255, 255); }
+        public static Color Gray() { return new Color(128, 128, 128); }
+
+        public Color(byte red, byte green, byte blue, byte alpha = 255)
         {
-            this.red = red;
-            this.green = green;
-            this.blue = blue;
-            this.alpha = alpha;
+            _red = red;
+            _green = green;
+            _blue = blue;
+            _alpha = alpha;
         }
 
         /// <summary>
@@ -27,7 +37,7 @@ namespace Sword.Casting
         /// <returns>The alpha value.</returns>
         public int GetAlpha()
         {
-            return alpha;
+            return _alpha;
         }
 
         /// <summary>
@@ -36,7 +46,7 @@ namespace Sword.Casting
         /// <returns>The blue value.</returns>
         public int GetBlue()
         {
-            return blue;
+            return _blue;
         }
 
         /// <summary>
@@ -45,7 +55,7 @@ namespace Sword.Casting
         /// <returns>The green value.</returns>
         public int GetGreen()
         {
-            return green;
+            return _green;
         }
 
         /// <summary>
@@ -54,7 +64,7 @@ namespace Sword.Casting
         /// <returns>The red value.</returns>
         public int GetRed()
         {
-            return red;
+            return _red;
         }
 
         
