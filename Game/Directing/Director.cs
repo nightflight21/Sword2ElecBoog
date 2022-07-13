@@ -15,13 +15,13 @@ namespace Sword.Directing
         private Cast cast;
         private Script script;
         private SceneManager sceneManager;
-        private VideoService videoService;
+        private IVideoService videoService;
         
         /// <summary>
         /// Constructs a new instance of Director using the given VideoService.
         /// </summary>
         /// <param name="videoService">The given VideoService.</param>
-        public Director(VideoService videoService)
+        public Director(IVideoService videoService)
         {
             this.videoService = videoService;
             this.cast = new Cast();
