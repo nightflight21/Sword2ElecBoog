@@ -1,32 +1,33 @@
-//using System;
-using Sword.Casting;
-using Sword.Scripting;
-using Sword.Services;
+using System;
+using Byui.Games.Casting;
+using Byui.Games.Scripting;
+using Byui.Games.Services;
 
 
-namespace Sword.Scripting
+namespace Example.Scrolling
 {
     /// <summary>
     /// Draws the actors on the screen.
     /// </summary>
-    public class DrawActorsAction : Action
+    public class DrawActorsAction : Byui.Games.Scripting.Action
     {
-        private VideoService _videoService;
+        private IVideoService _videoService;
 
-        public DrawActorsAction(ServiceFactory serviceFactory)
+        public DrawActorsAction(IServiceFactory serviceFactory)
         {
             _videoService = serviceFactory.GetVideoService();
         }
 
-        public void Execute(Scene scene, Script script, IActionCallback callback)
+        public override void Execute(Scene scene, float deltaTime, IActionCallback callback)
         {
             try
             {
                 // Get the actors from the cast.
-                //Camera camera = scene.GetFirstActor<Camera>("camera");
-                //Label instructions = scene.GetFirstActor<Label>("instructions");
+                Camera camera = scene.GetFirstActor<Camera>("camera");
+                Label instructions = scene.GetFirstActor<Label>("instructions");
                 Actor player = scene.GetFirstActor("player");
-                //Label status = scene.GetFirstActor<Label>("status");
+                Label status = scene.GetFirstActor<Label>("status");
+                Actor enemy = scene.GetFirstActor("enemy");
 
                 // Draw the actors on the screen. Note we have provided the camera as a second 
                 // parameter when drawing the player. The videoservice uses the camera to translate
@@ -35,6 +36,7 @@ namespace Sword.Scripting
                 _videoService.DrawGrid(160, Color.Gray(), camera);
                 _videoService.Draw(instructions);
                 _videoService.Draw(player, camera);
+                _videoService.Draw(enemy);
                 _videoService.Draw(status);
                 _videoService.FlushBuffer();
             }
