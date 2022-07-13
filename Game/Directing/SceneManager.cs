@@ -228,10 +228,10 @@ namespace Sword.Directing
 
         private void AddUpdateActions(Script script)
         {
-            script.AddAction(Constants.UPDATE, new MoveBallAction());
-            script.AddAction(Constants.UPDATE, new MoveRacketAction());
-            script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService));
-            script.AddAction(Constants.UPDATE, new CollideRacketAction(PhysicsService));
+            //script.AddAction(Constants.UPDATE, new MoveBallAction());
+            script.AddAction(Constants.UPDATE, new MovePlayerAction());
+            //script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService));
+            //script.AddAction(Constants.UPDATE, new CollideRacketAction(PhysicsService));
             //script.AddAction(Constants.UPDATE, new CheckOverAction());     
         }
     }
