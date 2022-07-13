@@ -16,7 +16,7 @@ namespace Sword.Casting
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
-        public Enemy(Body body, bool debug = false) : base(debug)
+        public Enemy(Body body)
         {
             this.body = body;
         }
