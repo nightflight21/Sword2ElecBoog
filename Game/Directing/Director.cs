@@ -28,6 +28,7 @@ namespace Sword.Directing
             this.videoService = videoService;
             this.cast = new Cast();
             this.script = new Script();
+            this.scene = new Scene();
             this.sceneManager = new SceneManager();
         }
 

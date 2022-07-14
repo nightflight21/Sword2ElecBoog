@@ -20,6 +20,7 @@ namespace Sword.Services
             MouseService = new RaylibMouseService();
             VideoService = new RaylibVideoService(Constants.GAME_NAME,
             Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.BLACK);
+            PhysicsService = new RaylibPhysicsService();
         }
 
         public RaylibServiceFactory(string filepath)
