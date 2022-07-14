@@ -12,7 +12,7 @@ namespace Sword.Directing
     public class Director : IActionCallback
     {
         //private IAudioService _audioService = null;
-        private IVideoService _videoService = null;
+        private IVideoService _videoService;// = null;
         private Scene scene;
         private Cast cast;
         private Script script;
