@@ -16,7 +16,7 @@ namespace Sword.Casting
         private Color _fontColor = Color.White();
         private string _fontFile = string.Empty;
         private float _fontSize = 18f;
-        private string _text = string.Empty;
+        Text _text = string.Empty;
         
         public Label() {}
 
