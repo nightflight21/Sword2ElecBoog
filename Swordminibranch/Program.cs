@@ -56,6 +56,7 @@ namespace Example.Scrolling
             MovePlayerAction movePlayerAction = new MovePlayerAction();
             UpdateStatusAction updateStatusAction = new UpdateStatusAction();
             DrawActorsAction drawActorsAction = new DrawActorsAction(serviceFactory);
+            CollideActorsAction collideActorsAction = new CollideActorsAction(serviceFactory);
 
             // Instantiate a new scene, add the actors and actions.
             Scene scene = new Scene();
@@ -69,6 +70,7 @@ namespace Example.Scrolling
             scene.AddAction(Phase.Update, movePlayerAction);
             scene.AddAction(Phase.Update, updateStatusAction);
             scene.AddAction(Phase.Output, drawActorsAction);
+            scene.AddAction(Phase.Update, collideActorsAction);
 
             // Start the game.
             Director director = new Director(serviceFactory);
