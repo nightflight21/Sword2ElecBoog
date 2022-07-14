@@ -13,9 +13,9 @@ namespace Sword.Scripting
     {
         private IKeyboardService keyboardService;
         
-        public SteerPlayerAction(IKeyboardService keyboardService)
+        public SteerPlayerAction(IServiceFactory serviceFactory)
         {
-            this.keyboardService = keyboardService;
+            this.keyboardService = serviceFactory.GetKeyboardService();
         }
 
         public void Execute(Scene scene, Script script, IActionCallback callback)

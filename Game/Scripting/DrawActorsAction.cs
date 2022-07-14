@@ -12,9 +12,9 @@ namespace Sword.Scripting
     {
         private IVideoService videoService;
 
-        public DrawActorsAction(IVideoService videoService)
+        public DrawActorsAction(IServiceFactory serviceFactory)
         {
-            this.videoService = videoService;
+            this.videoService = serviceFactory.GetVideoService();
         }
 
         public void Execute(Scene scene, Script script, IActionCallback callback)
