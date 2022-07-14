@@ -10,6 +10,7 @@ namespace Sword.Services
         private static IMouseService MouseService;
         //private static ISettingsService SettingsService;
         private static IVideoService VideoService;
+        private static IPhysicsService PhysicsService;
 
         public RaylibServiceFactory()
         {
@@ -17,7 +18,8 @@ namespace Sword.Services
             //AudioService = new RaylibAudioService(SettingsService);
             KeyboardService = new RaylibKeyboardService();
             MouseService = new RaylibMouseService();
-            VideoService = new RaylibVideoService(SettingsService);
+            VideoService = new RaylibVideoService(Constants.GAME_NAME,
+            Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.BLACK);
         }
 
         public RaylibServiceFactory(string filepath)
@@ -26,7 +28,8 @@ namespace Sword.Services
             //AudioService = new RaylibAudioService(SettingsService);
             KeyboardService = new RaylibKeyboardService();
             MouseService = new RaylibMouseService();
-            VideoService = new RaylibVideoService(SettingsService);
+            VideoService = new RaylibVideoService(Constants.GAME_NAME,
+            Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.BLACK);
         }
 
         //public IAudioService GetAudioService()
@@ -52,6 +55,11 @@ namespace Sword.Services
         public IVideoService GetVideoService()
         {
             return VideoService;
+        }
+
+        public IPhysicsService GetPhysicsService()
+        {
+            return PhysicsService;
         }
     }
 }
