@@ -17,7 +17,7 @@ namespace Sword.Scripting
         
         public Scene() { }
 
-        public void AddAction(int phase, Action action)//(int phase, Action action)
+        public void AddAction(int phase, Action action)
         {
             string _phase = null;
             if (phase == 0)
