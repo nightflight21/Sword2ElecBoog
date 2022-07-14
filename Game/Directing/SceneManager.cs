@@ -11,11 +11,12 @@ namespace Sword.Directing
     public class SceneManager
     {
         //public static AudioService AudioService = new RaylibAudioService();
-        public static IKeyboardService KeyboardService = new RaylibKeyboardService();
-        public static IMouseService MouseService = new RaylibMouseService();
-        public static IPhysicsService PhysicsService = new RaylibPhysicsService();
-        public static IVideoService VideoService = new RaylibVideoService(Constants.GAME_NAME,
-            Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.BLACK);
+        //public static IKeyboardService KeyboardService = new RaylibKeyboardService();
+        //public static IMouseService MouseService = new RaylibMouseService();
+        //public static IPhysicsService PhysicsService = new RaylibPhysicsService();
+        //public static IVideoService VideoService = new RaylibVideoService(Constants.GAME_NAME,
+            //Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.BLACK);
+        public static IServiceFactory serviceFactory = new RaylibServiceFactory();
 
         public SceneManager()
         {
@@ -84,7 +85,7 @@ namespace Sword.Directing
 
             script.ClearAllActions();
 
-            SteerPlayerAction action = new SteerPlayerAction(KeyboardService);
+            SteerPlayerAction action = new SteerPlayerAction(serviceFactory);
             script.AddAction(Constants.INPUT, action);
 
             AddUpdateActions(script);    
@@ -210,7 +211,7 @@ namespace Sword.Directing
             //script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             //script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             //script.AddAction(Constants.OUTPUT, new DrawEnemyAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawActorsAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawActorsAction(serviceFactory));
             //script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
             //script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
         }
