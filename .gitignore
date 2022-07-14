@@ -348,3 +348,4 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+obj/Debug/net6.0/Sword2ElecBoog.assets.cache
