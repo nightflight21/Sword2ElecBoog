@@ -12,7 +12,7 @@ namespace Sword.Scripting
     /// </remarks>
     public class Scene
     {
-        private Cast _cast = new Cast();
+        public Cast _cast = new Cast();
         private Script _script = new Script();
         
         public Scene() { }
