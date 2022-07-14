@@ -19,7 +19,7 @@ namespace Sword.Scripting
 
         public void AddAction(int phase, Action action)
         {
-            string _phase = null;
+            string _phase;
             if (phase == 0)
                 {_phase = Constants.INPUT;}
             else if (phase == 1)

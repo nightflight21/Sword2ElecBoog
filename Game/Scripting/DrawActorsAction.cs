@@ -23,9 +23,9 @@ namespace Sword.Scripting
             {
                 // Get the actors from the cast.
                 Camera camera = scene.GetFirstActor<Camera>("camera");
-                //Label instructions = scene.GetFirstActor<Label>("instructions");
+                Label instructions = scene.GetFirstActor<Label>("instructions");
                 Actor player = scene.GetFirstActor("player");
-                //Label status = scene.GetFirstActor<Label>("status");
+                Label status = scene.GetFirstActor<Label>("status");
                 Actor enemy = scene.GetFirstActor("enemy");
 
                 // Draw the actors on the screen. Note we have provided the camera as a second 
@@ -33,10 +33,10 @@ namespace Sword.Scripting
                 // the player's position within the world to its position on the screen.
                 videoService.ClearBuffer();
                 videoService.DrawGrid(160, Color.Gray(), camera);
-                //videoService.Draw(instructions);
+                videoService.Draw(instructions);
                 videoService.Draw(player, camera);
                 videoService.Draw(enemy);
-                //videoService.Draw(status);
+                videoService.Draw(status);
                 videoService.FlushBuffer();
             }
             catch (Exception exception)

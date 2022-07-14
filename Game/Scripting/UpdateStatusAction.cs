@@ -22,11 +22,11 @@ namespace Sword.Scripting
             {
                 // get the player and status actors from the cast
                 Actor player = scene.GetFirstActor("player");
-                //Label status = scene.GetFirstActor<Label>("status");
+                Label status = scene.GetFirstActor<Label>("status");
 
                 // update the status actor with the player info
                 string newInfo = $"x:{player.GetPosition().X}, y:{player.GetPosition().Y}";
-                //status.Display(newInfo);
+                status.Display(newInfo);
             }
             catch (Exception exception)
             {
