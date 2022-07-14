@@ -66,7 +66,7 @@ namespace Sword.Directing
         public void OnError(string message, System.Exception exception)
         {
             //_audioService.Release();
-            _videoService.Release();
+            videoService.Release();
             System.Console.Error.WriteLine($"ERROR: {message}");
             System.Console.Error.WriteLine(exception.Message);
             System.Console.Error.WriteLine(exception.StackTrace);
@@ -80,7 +80,7 @@ namespace Sword.Directing
         public void OnStop()
         {
             //_audioService.Release();
-            _videoService.Release();
+            videoService.Release();
         }
     }
 }
