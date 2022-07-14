@@ -17,9 +17,16 @@ namespace Sword.Scripting
         
         public Scene() { }
 
-        public void AddAction(string phase, Action action)//(int phase, Action action)
+        public void AddAction(int phase, Action action)//(int phase, Action action)
         {
-            _script.AddAction(phase, action);
+            string _phase = null;
+            if (phase == 0)
+                {_phase = Constants.INPUT;}
+            else if (phase == 1)
+                {_phase = Constants.UPDATE;}
+            else
+                {_phase = Constants.OUTPUT;}
+            _script.AddAction(_phase, action);
         }
 
         public void AddActor(string group, Actor actor)
