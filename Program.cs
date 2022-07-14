@@ -54,7 +54,7 @@ namespace Sword
             scene.AddAction(Phase.Update, updateStatusAction);
             scene.AddAction(Phase.Output, drawActorsAction);
             
-            Director director = new Director(SceneManager.serviceFactory.GetVideoService());
+            Director director = new Director(serviceFactory.GetVideoService());
             director.StartGame();
         }
     }

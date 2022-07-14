@@ -44,6 +44,7 @@ namespace Sword.Directing
 
         private void PrepareNewGame(Cast cast, Script script)
         {
+            Console.WriteLine("here");
             AddStats(cast);
             AddScore(cast);
             AddEnemy(cast);
@@ -197,13 +198,13 @@ namespace Sword.Directing
 
         private void AddInitActions(Script script)
         {
-            // script.AddAction(Constants.INITIALIZE, new InitializeDevicesAction( 
-            //     VideoService));
+             script.AddAction(Constants.INITIALIZE, new InitializeDevicesAction( 
+                 serviceFactory.GetVideoService()));
         }
 
         private void AddLoadActions(Script script)
         {
-            //script.AddAction(Constants.LOAD, new LoadAssetsAction( VideoService));
+            script.AddAction(Constants.LOAD, new LoadAssetsAction( serviceFactory.GetVideoService()));
         }
 
         private void AddOutputActions(Script script)
