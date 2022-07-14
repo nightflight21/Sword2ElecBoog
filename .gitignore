@@ -349,3 +349,12 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 obj/Debug/net6.0/Sword2ElecBoog.assets.cache
+obj/project.assets.json
+obj/project.nuget.cache
+obj/Sword2ElecBoog.csproj.nuget.dgspec.json
+obj/Sword2ElecBoog.csproj.nuget.g.props
+obj/Debug/net6.0/Sword2ElecBoog.assets.cache
+obj/Debug/net6.0/Sword2ElecBoog.csproj.AssemblyReference.cache
+obj/Debug/net6.0/Sword2ElecBoog.csproj.CoreCompileInputs.cache
+obj/Debug/net6.0/Sword2ElecBoog.csproj.FileListAbsolute.txt
+obj/Debug/net6.0/Sword2ElecBoog.GeneratedMSBuildEditorConfig.editorconfig
