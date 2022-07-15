@@ -9,9 +9,9 @@ namespace Sword.Scripting
     {
         private IVideoService videoService;
         
-        public DrawDialogAction(IVideoService videoService)
+        public DrawDialogAction(IServiceFactory serviceFactory)
         {
-            this.videoService = videoService;
+            this.videoService = serviceFactory.GetVideoService();
         }
 
         public void Execute(Scene scene, Script script, IActionCallback callback)
