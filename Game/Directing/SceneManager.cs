@@ -213,7 +213,7 @@ namespace Sword.Directing
             script.AddAction(Constants.OUTPUT, new DrawHudAction(serviceFactory.GetVideoService()));
             //script.AddAction(Constants.OUTPUT, new DrawEnemyAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawActorsAction(serviceFactory));
-            //script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawDialogAction(serviceFactory));
             //script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
         }
 
