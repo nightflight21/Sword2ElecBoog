@@ -21,10 +21,10 @@ namespace Sword.Scripting
             List<Actor> enemies = cast.GetActors(Constants.Enemy_GROUP);
             foreach (Actor actor in enemies)
             {
-                Brick brick = (Brick)actor;
-                Body body = brick.GetBody();
+                Enemey enemy = (Enemy)actor;
+                Body body = enemy.GetBody();
 
-                if (brick.IsDebug())
+                if (enemy.IsDebug())
                 {
                     Rectangle rectangle = body.GetRectangle();
                     Point size = rectangle.GetSize();
@@ -32,10 +32,10 @@ namespace Sword.Scripting
                     videoService.DrawRectangle(size, pos, Constants.PURPLE, false);
                 }
 
-                Animation animation = brick.GetAnimation();
-                Image image = animation.NextImage();
+                //Animation animation = enemy.GetAnimation();
+                //Image image = animation.NextImage();
                 Point position = body.GetPosition();
-                videoService.DrawImage(image, position);
+                //videoService.DrawImage(image, position);
             }
         }
     }
